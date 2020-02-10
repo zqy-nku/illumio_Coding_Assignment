@@ -1,7 +1,16 @@
+"""
+The key ideas of the firewall engine:
+1. Building a tree trie to store the firewall rules;
+2. Using binary search to check whether the traffic packet matches the rules.
+
+Author: Qingyu Zhu
+"""
+
 import csv
 import socket, struct
 import optparse
 import sys
+
 
 #Definiation for a Tree node
 class TreeNode():
