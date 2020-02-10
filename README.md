@@ -21,8 +21,8 @@ I created a csv file named `rules.csv` that contains the given rules and some ad
 the given test cases and certain border cases.
 
 The results show that:
-1) the program can update and merge the port and ip address intervals correctly, the trie tree can be built efficiently, it seems that the rules stored in a compact form.
-2) all test cases are passed, and the program works well, it can accept packets very quickly.
+1) the programme can update and merge the port and ip address intervals correctly, the trie tree can be built efficiently, it seems that the rules stored in a compact form.
+2) all test cases are passed, and the programme works well, it can accept packets very quickly.
 
 ## Performance Analysis
 1. Time Complexity of building the rules Trie Tree: O(nlogn)
@@ -34,7 +34,7 @@ If I had more time, I would do following optimizations
 2. Improve modularity of the coding style, for example, separate the build_trie_tree() function into sub functions like build_port_level(), build_ip_level().
 
 ## How to execute:
-### Run the firewall_engine.py program
+### Run the firewall_engine.py programme
 ```
 $ python firewall_engine.py -t -f /path/to/rules.csv
 ```
