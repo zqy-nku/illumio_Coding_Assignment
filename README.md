@@ -12,8 +12,8 @@ I mainly divided the firewall engine into two function modules:
 I mainly applied following data structure, algorithm and methods to implement the firewall:
 1. Trie Tree: to store the massive firewall rules in a compact form.
 2. binary search:
-    a). to add or merge new ports intervals and new ip intervals into responding sorted arrays;
-    b). to quickly check whether the packet port and ip address match the rules.
+    * to add or merge new ports intervals and new ip intervals into responding sorted arrays;
+    * to quickly check whether the packet port and ip address match the rules.
 3. ip2int: to convert ip address ranges into integer ranges.
 
 ## Test
