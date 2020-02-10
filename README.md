@@ -9,7 +9,7 @@ I mainly divided the firewall engine into two function modules:
 2. Checks incoming and outgoing network traffic.
 
 ### Highlights of Implementation
-I mainly applied following data structure, algorithm and methods to implement the firewall:
+In `firewall_engine.py`, I mainly applied following data structure, algorithm and methods to implement the firewall:
 1. trie tree: to store the massive firewall rules in a compact form.
 2. binary search:
    * to add or merge new ports intervals and new ip intervals into responding sorted arrays;
@@ -34,7 +34,7 @@ The results show that:
 ## Future optimizations
 If I had more time, I would do following optimizations
 1. Apply a in-memory database to store the rules trie tree. When the firewall rules increase to a very large dataset, it is more efficient for us to use a in-memory database to store the trie tree, especially when we update and access the rules dataset.
-2. Improve modularity of the coding style, for example, separate the build_trie_tree() function into sub functions like build_port_level(), build_ip_level().
+2. Improve modularity of the pragramme, for example, separate the build_trie_tree() function into sub functions like build_port_level(), build_ip_level().
 
 ## Programme Execution:
 ### Run the firewall_engine.py programme
