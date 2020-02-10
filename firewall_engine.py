@@ -65,12 +65,12 @@ class Firewall():
                 # update the port interval array
                 while index >= 0:
                     # sort the array based on the left bound and right bound
-                    if self.isSmaller(index, port_interval, node.children):
+                    if self.is_smaller(index, port_interval, node.children):
                         index -= 1
                     else:
                         break
                 # if the port range has been exited, add responding ip address into the exiting child node list
-                if self.isSame(index, port_interval, node.children):
+                if self.is_same(index, port_interval, node.children):
                     child_node = node.children[index][2]
                 else:
                     node.children = self.update_interval(index, port_interval, node.children)
@@ -115,22 +115,22 @@ class Firewall():
 
     # convert ip address into integer range form
     def parse_ip(self, ip):
-        interval = [self.ip2int(i) for i in ip.split("-")]
+        interval = [self.ip_2_int(i) for i in ip.split("-")]
         if len(interval) == 1:
             interval.append(interval[0])
         return interval
 
-    def ip2int(self, ip):
+    def ip_2_int(self, ip):
         packedIP = socket.inet_aton(ip)
         return int(struct.unpack("!L", packedIP)[0])
 
-    def isSmaller(self, index, target, intervals):
+    def is_smaller(self, index, target, intervals):
         if intervals[index][0] == target[0] and intervals[index][1] > target[1]:
             return True
         else:
             return False
 
-    def isSame(self, index, target, intervals):
+    def is_same(self, index, target, intervals):
         if target[0] == intervals[index][0] and target[1] == intervals[index][1]:
             return True
         else:
@@ -186,7 +186,7 @@ class Firewall():
 
         #check whether the IP address matches rules, apply the binary search
         if level == 3:
-            ip = self.ip2int(packet[level])
+            ip = self.ip_2_int(packet[level])
             index = self.binary_search(ip, node.children, 0)
             if node.children[index][0] <= ip <= node.children[index][1]:
                 return True
