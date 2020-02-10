@@ -166,7 +166,6 @@ class Firewall():
         return self.check_packet(packet, self.trie_tree, 0)
 
     def check_packet(self, packet, node, level):
-
         # check whether the direction and protocol match rules
         if level <= 1:
             for i in range(len(node.children)):
