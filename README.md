@@ -2,6 +2,23 @@
 
 A firewall engine that can accept the incoming and outgoing network traffic based on firewall rules.
 
+## Programme Execution:
+### Run the firewall_engine.py programme
+```
+$ python firewall_engine.py -t -f /path/to/rules.csv
+```
+
+start firewall with rules file:
+```
+$ python firewall_engine.py -f /path/to/rules.csv
+```
+
+### Dependencies
+1. csv
+2. socket, struct
+3. optparse
+4. sys
+
 ## Design and Implementation
 ### Module Design:
 I mainly divided the firewall engine into two function modules:
@@ -35,23 +52,6 @@ The results show that:
 If I had more time, I would do following optimizations
 1. Apply a in-memory database to store the rules trie tree. When the firewall rules increase to a very large dataset, it is more efficient for us to use a in-memory database to store the trie tree, especially when we update and access the rules dataset.
 2. Improve modularity of the pragramme, for example, separate the build_trie_tree() function into sub functions like build_port_level(), build_ip_level().
-
-## Programme Execution:
-### Run the firewall_engine.py programme
-```
-$ python firewall_engine.py -t -f /path/to/rules.csv
-```
-
-start firewall with rules file:
-```
-$ python firewall_engine.py -f /path/to/rules.csv
-```
-
-### Dependencies
-1. csv
-2. socket, struct
-3. optparse
-4. sys
 
 ## Team Preference
 My preference order for the teams:
