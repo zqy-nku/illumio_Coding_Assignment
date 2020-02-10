@@ -17,7 +17,7 @@ I mainly applied following data structure, algorithm and methods to implement th
 3. ip2int: to convert ip address ranges into integer ranges.
 
 ## Test
-I created a csv file named 'rules.csv' that contains the given rules and some additional rules. Then I tested
+I created a csv file named `rules.csv` that contains the given rules and some additional rules. Then I tested
 the given test cases and certain border cases.
 
 The results show that:
@@ -35,14 +35,14 @@ If I had more time, I would do following optimizations
 
 ## How to execute:
 ### Run the firewall_engine.py program
-'''
+```
 $ python firewall_engine.py -t -f /path/to/rules.csv
-'''
+```
 
 start firewall with rules file:
-'''
+```
 $ python firewall_engine.py -f /path/to/rules.csv
-'''
+```
 
 ### Dependencies
 1. csv
